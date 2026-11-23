@@ -26,6 +26,7 @@ A full-stack SaaS task management application built with Next.js and Supabase, f
 - Usage limits and tracking
 - Steps (subtasks) for each task, stored in their own table
 - AI-suggested steps: OpenAI breaks a task into steps
+- Login with GitHub (OAuth)
 
 ## Tech Stack
 

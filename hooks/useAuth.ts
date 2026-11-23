@@ -108,6 +108,20 @@ export function useAuth(): UseAuthReturn {
     }
   };
 
+  const handleGithubLogin = async () => {
+    try {
+      await supabase.auth.signInWithOAuth({
+        provider: "github",
+        options: {
+          redirectTo: `${window.location.origin}/dashboard`,
+        },
+      });
+    } catch (error: any) {
+      setError(error.message);
+      console.error("Error with GitHub login:", error);
+    }
+  };
+
   const handleSignup = async () => {
     clearError();
     try {
@@ -169,6 +183,7 @@ export function useAuth(): UseAuthReturn {
     signOut,
     handleLogin,
     handleGoogleLogin,
+    handleGithubLogin,
     handleSignup,
     setEmail,
     setPassword,
